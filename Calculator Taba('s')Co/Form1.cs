@@ -11,5 +11,10 @@ namespace Calculator_Taba__s__Co
         {
 
         }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
