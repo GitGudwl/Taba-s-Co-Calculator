@@ -7,9 +7,6 @@ namespace Calculator_Taba__s__Co
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
