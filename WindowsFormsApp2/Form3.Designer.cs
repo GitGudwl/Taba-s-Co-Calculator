@@ -51,7 +51,7 @@
             this.ConvertButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConvertButton.ForeColor = System.Drawing.Color.Black;
             this.ConvertButton.Location = new System.Drawing.Point(779, 508);
-            this.ConvertButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ConvertButton.Margin = new System.Windows.Forms.Padding(4);
             this.ConvertButton.Name = "ConvertButton";
             this.ConvertButton.Size = new System.Drawing.Size(133, 50);
             this.ConvertButton.TabIndex = 0;
@@ -64,7 +64,7 @@
             this.OutputTextBox.AccessibleName = "textBoxTwo";
             this.OutputTextBox.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.OutputTextBox.Location = new System.Drawing.Point(527, 426);
-            this.OutputTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.OutputTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.OutputTextBox.Multiline = true;
             this.OutputTextBox.Name = "OutputTextBox";
             this.OutputTextBox.Size = new System.Drawing.Size(384, 42);
@@ -77,7 +77,7 @@
             this.ResetButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ResetButton.ForeColor = System.Drawing.Color.Black;
             this.ResetButton.Location = new System.Drawing.Point(69, 508);
-            this.ResetButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ResetButton.Margin = new System.Windows.Forms.Padding(4);
             this.ResetButton.Name = "ResetButton";
             this.ResetButton.Size = new System.Drawing.Size(129, 50);
             this.ResetButton.TabIndex = 3;
@@ -102,20 +102,21 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Snow;
             this.groupBox1.Location = new System.Drawing.Point(41, 48);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(987, 591);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Temparature Converter";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // CelciusToKelvinRadioButton
             // 
             this.CelciusToKelvinRadioButton.AutoSize = true;
             this.CelciusToKelvinRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CelciusToKelvinRadioButton.Location = new System.Drawing.Point(67, 330);
-            this.CelciusToKelvinRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CelciusToKelvinRadioButton.Margin = new System.Windows.Forms.Padding(4);
             this.CelciusToKelvinRadioButton.Name = "CelciusToKelvinRadioButton";
             this.CelciusToKelvinRadioButton.Size = new System.Drawing.Size(155, 24);
             this.CelciusToKelvinRadioButton.TabIndex = 15;
@@ -130,7 +131,7 @@
             this.FahrenheitToCelciusRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FahrenheitToCelciusRadioButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.FahrenheitToCelciusRadioButton.Location = new System.Drawing.Point(67, 266);
-            this.FahrenheitToCelciusRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FahrenheitToCelciusRadioButton.Margin = new System.Windows.Forms.Padding(4);
             this.FahrenheitToCelciusRadioButton.Name = "FahrenheitToCelciusRadioButton";
             this.FahrenheitToCelciusRadioButton.Size = new System.Drawing.Size(189, 24);
             this.FahrenheitToCelciusRadioButton.TabIndex = 14;
@@ -142,7 +143,7 @@
             // InputTextBox
             // 
             this.InputTextBox.Location = new System.Drawing.Point(323, 108);
-            this.InputTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.InputTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.InputTextBox.Multiline = true;
             this.InputTextBox.Name = "InputTextBox";
             this.InputTextBox.Size = new System.Drawing.Size(629, 40);
@@ -165,7 +166,7 @@
             this.FahrenheitToKelvinRadioButton.AutoSize = true;
             this.FahrenheitToKelvinRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FahrenheitToKelvinRadioButton.Location = new System.Drawing.Point(67, 394);
-            this.FahrenheitToKelvinRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FahrenheitToKelvinRadioButton.Margin = new System.Windows.Forms.Padding(4);
             this.FahrenheitToKelvinRadioButton.Name = "FahrenheitToKelvinRadioButton";
             this.FahrenheitToKelvinRadioButton.Size = new System.Drawing.Size(178, 24);
             this.FahrenheitToKelvinRadioButton.TabIndex = 11;
@@ -179,7 +180,7 @@
             this.KelvinToCelciusRadioButton.AutoSize = true;
             this.KelvinToCelciusRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.KelvinToCelciusRadioButton.Location = new System.Drawing.Point(67, 362);
-            this.KelvinToCelciusRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.KelvinToCelciusRadioButton.Margin = new System.Windows.Forms.Padding(4);
             this.KelvinToCelciusRadioButton.Name = "KelvinToCelciusRadioButton";
             this.KelvinToCelciusRadioButton.Size = new System.Drawing.Size(155, 24);
             this.KelvinToCelciusRadioButton.TabIndex = 10;
@@ -194,7 +195,7 @@
             this.CelciusToFahrenheitRadioButton.AutoSize = true;
             this.CelciusToFahrenheitRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CelciusToFahrenheitRadioButton.Location = new System.Drawing.Point(67, 298);
-            this.CelciusToFahrenheitRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CelciusToFahrenheitRadioButton.Margin = new System.Windows.Forms.Padding(4);
             this.CelciusToFahrenheitRadioButton.Name = "CelciusToFahrenheitRadioButton";
             this.CelciusToFahrenheitRadioButton.Size = new System.Drawing.Size(189, 24);
             this.CelciusToFahrenheitRadioButton.TabIndex = 8;
@@ -227,15 +228,15 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Enter  Value to Convert:";
             // 
-            // Form1
+            // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1067, 683);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "Form3";
             this.Text = "AssignmentSetA";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);

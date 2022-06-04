@@ -8,11 +8,16 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
+
 
 namespace WindowsFormsApp2
 {
     public partial class Form1 : Form
     {
+        bool firstClick = true;
+        bool mouseDown;
+        private Point mousePos;
         public Form1()
         {
             InitializeComponent();
@@ -20,14 +25,13 @@ namespace WindowsFormsApp2
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
 
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-            textBox1.Text = textBox1.Text + button.Text;
+            
+            textBox1.Text = textBox1.Text + "1/";
         }
 
         private void button16_Click(object sender, EventArgs e)
@@ -96,6 +100,13 @@ namespace WindowsFormsApp2
             textBox1.Text = textBox1.Text + button.Text;
         }
 
+        private void mouseDownEvent(object sender, MouseEventArgs e)
+        {
+            mousePos.X = e.X;
+            mousePos.Y = e.Y;
+            mouseDown = true;
+        }
+
         private void button19_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
@@ -128,8 +139,13 @@ namespace WindowsFormsApp2
 
         private void button15_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-            textBox1.Text = textBox1.Text + button.Text;
+            try
+            {
+                textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1, 1);
+            }catch (Exception)
+            {
+                MessageBox.Show("Input is empty");
+            }
         }
 
         private void button14_Click(object sender, EventArgs e)
@@ -139,15 +155,28 @@ namespace WindowsFormsApp2
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            if (firstClick)
+            {
+                textBox1.Text = textBox1.Text.TrimStart('0'); ;
+                firstClick = false;
+            }
             textBox1.SelectionStart = textBox1.Text.Length;
             textBox1.ScrollToCaret();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            String s = textBox1.Text;
-            textBox1.Text = "";
-            textBox1.Text = calculator.final(s); 
+            string s = textBox1.Text;
+            if (calculator.isOperatorchar(s[s.Length-1]))
+            {
+                MessageBox.Show("input is invalid");
+            }
+            else
+            {
+                textBox1.Text = "";
+                textBox1.Text = calculator.final(s);
+                History.Items.Add(s + "=" + calculator.final(s));
+            }
         }
 
         private void button24_Click(object sender, EventArgs e)
@@ -165,6 +194,55 @@ namespace WindowsFormsApp2
         private void button22_Click(object sender, EventArgs e)
         {
             textBox1.Text = "0";
+            firstClick = true;
+        }
+
+        private void History_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void weightToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void temperatureToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form3  form3 = new Form3();
+            form3.ShowDialog();
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void minimizeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void mouseMoveEvent(object sender, MouseEventArgs e)
+        {
+            if(mouseDown == true)
+            {
+                Point currentScreenPos = PointToScreen(e.Location);
+                Location = new Point(currentScreenPos.X - mousePos.X, currentScreenPos.Y - mousePos.Y);
+
+            }
+        }
+
+        private void mouseUpEvent(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            History.Items.Clear();
+            textBox1.Text = "0";
+            firstClick = true;
         }
     }
 
@@ -183,7 +261,7 @@ namespace WindowsFormsApp2
     {
         static String[] mathTokenization(string unTokenize)
         {
-            string[] Tokenize = Regex.Split(unTokenize, @"([*()%\^\/]|(?<!E)[\+\-])");
+            string[] Tokenize = Regex.Split(unTokenize, @"([*()%\√^\/]|(?<!E)[\+\-])");
             return Tokenize;
         }
 
@@ -246,7 +324,7 @@ namespace WindowsFormsApp2
                 return 1;
             else if (C == "*" || C == "/" || C == "%")
                 return 2;
-            else if (C == "^" || C == "√")
+            else if (C == "^" || C== "√")
                 return 3;
             return 0;
         }
@@ -293,8 +371,14 @@ namespace WindowsFormsApp2
                 return 0;
 
             // Leaf node i.e, a double
-            if (root.left == null && root.right == null)
-                return Math.Round(double.Parse(root.data),2);
+            if (root.left == null && root.right == null) {
+                if (double.Parse(root.data) % 1 == 0)
+                {
+                    return int.Parse(root.data);
+                }
+                return double.Parse(root.data);
+            }
+                
 
             // Evaluate left subtree
             double leftEval = evalTree(root.left);
@@ -317,15 +401,23 @@ namespace WindowsFormsApp2
 
             if (root.data.Equals("^"))
                 return Math.Pow(leftEval, rightEval);
-            if (root.data.Equals("√"))
-                return Math.Pow(1/leftEval, rightEval);
 
+            if (root.data.Equals("√"))
+                return Math.Pow(leftEval,1/rightEval);
+            
             return leftEval / rightEval;
         }
-
-        public static bool isOperator(string ch)
+        public static bool isOperatorchar(char ch)
         {
-            if (ch == "+" || ch == "-" || ch == "*" || ch == "/" || ch == "^")
+            if (ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '^' || ch == '%' || ch == '√')
+            {
+                return true;
+            }
+            return false;
+        }
+        public static bool isOperator(string s)
+        {
+            if (s == "+" || s == "-" || s == "*" || s == "/" || s == "^" ||s == "%" || s== "√")
             {
                 return true;
             }
@@ -366,7 +458,12 @@ namespace WindowsFormsApp2
         {
             var try1 = Conversion.intoTreeUtility(s);
             Node tree = expressiontree(try1);
+            if(evalTree(tree) % 1 == 0)
+                return evalTree(tree).ToString();
             return evalTree(tree).ToString("N2");
+
+
+
         }
     }
 

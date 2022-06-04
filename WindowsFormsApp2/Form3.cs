@@ -233,6 +233,11 @@ namespace WindowsFormsApp2
           
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
         private void CelciusToKelvinRadioButton_CheckedChanged_1(object sender, EventArgs e)
         {
            

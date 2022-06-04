@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -54,7 +55,18 @@
             this.button4 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            this.History = new System.Windows.Forms.ListBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.converterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.weightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.temperatureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lengthToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.minimizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -272,12 +284,12 @@
             this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button15.Location = new System.Drawing.Point(103, 294);
+            this.button15.Location = new System.Drawing.Point(285, 294);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(85, 53);
             this.button15.TabIndex = 17;
             this.button15.TabStop = false;
-            this.button15.Text = "√";
+            this.button15.Text = "⌫";
             this.button15.UseVisualStyleBackColor = false;
             this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
@@ -288,7 +300,7 @@
             this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button16.Location = new System.Drawing.Point(194, 294);
+            this.button16.Location = new System.Drawing.Point(103, 294);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(85, 53);
             this.button16.TabIndex = 18;
@@ -354,7 +366,7 @@
             this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button20.Location = new System.Drawing.Point(285, 294);
+            this.button20.Location = new System.Drawing.Point(194, 294);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(85, 53);
             this.button20.TabIndex = 22;
@@ -377,6 +389,7 @@
             this.button21.TabStop = false;
             this.button21.Text = "CE";
             this.button21.UseVisualStyleBackColor = false;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
             // 
             // button22
             // 
@@ -439,7 +452,7 @@
             this.button4.Size = new System.Drawing.Size(85, 53);
             this.button4.TabIndex = 3;
             this.button4.TabStop = false;
-            this.button4.Text = "1/x";
+            this.button4.Text = "1/X";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -465,12 +478,115 @@
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
             // 
+            // History
+            // 
+            this.History.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.History.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.History.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.History.ForeColor = System.Drawing.SystemColors.Window;
+            this.History.FormattingEnabled = true;
+            this.History.ItemHeight = 29;
+            this.History.Location = new System.Drawing.Point(381, 101);
+            this.History.Name = "History";
+            this.History.Size = new System.Drawing.Size(385, 493);
+            this.History.TabIndex = 28;
+            this.History.SelectedIndexChanged += new System.EventHandler(this.History_SelectedIndexChanged);
+            this.History.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mouseDownEvent);
+            this.History.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mouseMoveEvent);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.converterToolStripMenuItem,
+            this.closeToolStripMenuItem,
+            this.minimizeToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(308, 36);
+            this.menuStrip1.TabIndex = 29;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // converterToolStripMenuItem
+            // 
+            this.converterToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.weightToolStripMenuItem,
+            this.temperatureToolStripMenuItem,
+            this.lengthToolStripMenuItem});
+            this.converterToolStripMenuItem.ForeColor = System.Drawing.Color.AliceBlue;
+            this.converterToolStripMenuItem.Name = "converterToolStripMenuItem";
+            this.converterToolStripMenuItem.Size = new System.Drawing.Size(116, 32);
+            this.converterToolStripMenuItem.Text = "Converter";
+            // 
+            // weightToolStripMenuItem
+            // 
+            this.weightToolStripMenuItem.Name = "weightToolStripMenuItem";
+            this.weightToolStripMenuItem.Size = new System.Drawing.Size(213, 32);
+            this.weightToolStripMenuItem.Text = "Weight";
+            this.weightToolStripMenuItem.Click += new System.EventHandler(this.weightToolStripMenuItem_Click);
+            // 
+            // temperatureToolStripMenuItem
+            // 
+            this.temperatureToolStripMenuItem.Name = "temperatureToolStripMenuItem";
+            this.temperatureToolStripMenuItem.Size = new System.Drawing.Size(213, 32);
+            this.temperatureToolStripMenuItem.Text = "Temperature";
+            this.temperatureToolStripMenuItem.Click += new System.EventHandler(this.temperatureToolStripMenuItem_Click);
+            // 
+            // lengthToolStripMenuItem
+            // 
+            this.lengthToolStripMenuItem.Name = "lengthToolStripMenuItem";
+            this.lengthToolStripMenuItem.Size = new System.Drawing.Size(213, 32);
+            this.lengthToolStripMenuItem.Text = "Length";
+            // 
+            // closeToolStripMenuItem
+            // 
+            this.closeToolStripMenuItem.ForeColor = System.Drawing.Color.AliceBlue;
+            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(75, 32);
+            this.closeToolStripMenuItem.Text = "Close";
+            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
+            // 
+            // minimizeToolStripMenuItem
+            // 
+            this.minimizeToolStripMenuItem.ForeColor = System.Drawing.Color.AliceBlue;
+            this.minimizeToolStripMenuItem.Name = "minimizeToolStripMenuItem";
+            this.minimizeToolStripMenuItem.Size = new System.Drawing.Size(109, 32);
+            this.minimizeToolStripMenuItem.Text = "Minimize";
+            this.minimizeToolStripMenuItem.Click += new System.EventHandler(this.minimizeToolStripMenuItem_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(779, 36);
+            this.panel1.TabIndex = 30;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mouseDownEvent);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mouseMoveEvent);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.mouseUpEvent);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(376, 69);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(94, 29);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "History";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(382, 595);
+            this.ClientSize = new System.Drawing.Size(778, 607);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.History);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button21);
             this.Controls.Add(this.button22);
@@ -496,11 +612,17 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button4);
+            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -533,6 +655,16 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox textBox1;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
+        private System.Windows.Forms.ListBox History;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem converterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem weightToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem temperatureToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lengthToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem minimizeToolStripMenuItem;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
