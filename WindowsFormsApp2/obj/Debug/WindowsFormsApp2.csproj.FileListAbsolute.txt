@@ -23,3 +23,16 @@ D:\Kuliah\Struktur Data dan Algoritma\TugasBesar\Taba-s-Co-Calculator\WindowsFor
 D:\Kuliah\Struktur Data dan Algoritma\TugasBesar\Taba-s-Co-Calculator\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
 D:\Kuliah\Struktur Data dan Algoritma\TugasBesar\Taba-s-Co-Calculator\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
 D:\Kuliah\Struktur Data dan Algoritma\TugasBesar\Taba-s-Co-Calculator\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
+C:\Users\Asus\OneDrive\Documents\Materi\SEMESTER 2\SDA\Praktikum\TUBES\baru\Taba-s-Co-Calculator\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
+C:\Users\Asus\OneDrive\Documents\Materi\SEMESTER 2\SDA\Praktikum\TUBES\baru\Taba-s-Co-Calculator\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
+C:\Users\Asus\OneDrive\Documents\Materi\SEMESTER 2\SDA\Praktikum\TUBES\baru\Taba-s-Co-Calculator\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
+C:\Users\Asus\OneDrive\Documents\Materi\SEMESTER 2\SDA\Praktikum\TUBES\baru\Taba-s-Co-Calculator\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.AssemblyReference.cache
+C:\Users\Asus\OneDrive\Documents\Materi\SEMESTER 2\SDA\Praktikum\TUBES\baru\Taba-s-Co-Calculator\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.SuggestedBindingRedirects.cache
+C:\Users\Asus\OneDrive\Documents\Materi\SEMESTER 2\SDA\Praktikum\TUBES\baru\Taba-s-Co-Calculator\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form1.resources
+C:\Users\Asus\OneDrive\Documents\Materi\SEMESTER 2\SDA\Praktikum\TUBES\baru\Taba-s-Co-Calculator\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form2.resources
+C:\Users\Asus\OneDrive\Documents\Materi\SEMESTER 2\SDA\Praktikum\TUBES\baru\Taba-s-Co-Calculator\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Form3.resources
+C:\Users\Asus\OneDrive\Documents\Materi\SEMESTER 2\SDA\Praktikum\TUBES\baru\Taba-s-Co-Calculator\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
+C:\Users\Asus\OneDrive\Documents\Materi\SEMESTER 2\SDA\Praktikum\TUBES\baru\Taba-s-Co-Calculator\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.GenerateResource.cache
+C:\Users\Asus\OneDrive\Documents\Materi\SEMESTER 2\SDA\Praktikum\TUBES\baru\Taba-s-Co-Calculator\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.cache
+C:\Users\Asus\OneDrive\Documents\Materi\SEMESTER 2\SDA\Praktikum\TUBES\baru\Taba-s-Co-Calculator\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
+C:\Users\Asus\OneDrive\Documents\Materi\SEMESTER 2\SDA\Praktikum\TUBES\baru\Taba-s-Co-Calculator\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
