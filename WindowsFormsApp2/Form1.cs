@@ -167,7 +167,20 @@ namespace WindowsFormsApp2
         private void button3_Click(object sender, EventArgs e)
         {
             string s = textBox1.Text;
+            s = s.Replace(",", string.Empty);
+            for (int i = 0; i < textBox1.Text.Length; i++)
+            {
+                if (calculator.isOperatorchar(textBox1.Text[i]) && calculator.isOperatorchar(textBox1.Text[i + 1]))
+                {
+                    invalidinput = false; break;
+                }
+            }
+
             if (calculator.isOperatorchar(s[s.Length-1]))
+            {
+                MessageBox.Show("input is invalid");
+            }
+            else if (!invalidinput)
             {
                 MessageBox.Show("input is invalid");
             }
@@ -332,7 +345,7 @@ namespace WindowsFormsApp2
         public static String[] intoTreeUtility(String s)
         {
             s = Minushandiling(s);
-            String[] temp = emptyValueDeletor(InfixToPrefix(mathTokenization(s)));
+            String[] temp = InfixToPrefix(emptyValueDeletor(mathTokenization(s)));
             Array.Reverse(temp, 0, temp.Length);
             foreach(var match in temp)
             {
@@ -458,8 +471,8 @@ namespace WindowsFormsApp2
         {
             var try1 = Conversion.intoTreeUtility(s);
             Node tree = expressiontree(try1);
-            if(evalTree(tree) % 1 == 0)
-                return evalTree(tree).ToString();
+            if (evalTree(tree) % 1 == 0)
+                return evalTree(tree).ToString("#,##0");
             return evalTree(tree).ToString("N2");
 
 

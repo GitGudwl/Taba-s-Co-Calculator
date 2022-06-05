@@ -64,6 +64,7 @@
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.minimizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -485,9 +486,9 @@
             this.History.ForeColor = System.Drawing.SystemColors.Window;
             this.History.FormattingEnabled = true;
             this.History.ItemHeight = 29;
-            this.History.Location = new System.Drawing.Point(381, 72);
+            this.History.Location = new System.Drawing.Point(381, 101);
             this.History.Name = "History";
-            this.History.Size = new System.Drawing.Size(385, 522);
+            this.History.Size = new System.Drawing.Size(385, 493);
             this.History.TabIndex = 28;
             this.History.SelectedIndexChanged += new System.EventHandler(this.History_SelectedIndexChanged);
             this.History.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mouseDownEvent);
@@ -523,21 +524,21 @@
             // weightToolStripMenuItem
             // 
             this.weightToolStripMenuItem.Name = "weightToolStripMenuItem";
-            this.weightToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.weightToolStripMenuItem.Size = new System.Drawing.Size(213, 32);
             this.weightToolStripMenuItem.Text = "Weight";
             this.weightToolStripMenuItem.Click += new System.EventHandler(this.weightToolStripMenuItem_Click);
             // 
             // temperatureToolStripMenuItem
             // 
             this.temperatureToolStripMenuItem.Name = "temperatureToolStripMenuItem";
-            this.temperatureToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.temperatureToolStripMenuItem.Size = new System.Drawing.Size(213, 32);
             this.temperatureToolStripMenuItem.Text = "Temperature";
             this.temperatureToolStripMenuItem.Click += new System.EventHandler(this.temperatureToolStripMenuItem_Click);
             // 
             // lengthToolStripMenuItem
             // 
             this.lengthToolStripMenuItem.Name = "lengthToolStripMenuItem";
-            this.lengthToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.lengthToolStripMenuItem.Size = new System.Drawing.Size(213, 32);
             this.lengthToolStripMenuItem.Text = "Length";
             // 
             // closeToolStripMenuItem
@@ -567,12 +568,24 @@
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mouseMoveEvent);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.mouseUpEvent);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(376, 69);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(94, 29);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "History";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(778, 607);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.History);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button21);
@@ -651,6 +664,7 @@
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem minimizeToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
