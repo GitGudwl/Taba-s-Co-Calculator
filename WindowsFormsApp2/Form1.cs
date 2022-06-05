@@ -30,8 +30,9 @@ namespace WindowsFormsApp2
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
-            textBox1.Text = textBox1.Text + "1/";
+
+            Button button = (Button)sender;
+            textBox1.Text = textBox1.Text + button.Text;
         }
 
         private void button16_Click(object sender, EventArgs e)
@@ -166,8 +167,10 @@ namespace WindowsFormsApp2
 
         private void button3_Click(object sender, EventArgs e)
         {
+            Boolean invalidinput = true;
             string s = textBox1.Text;
             s = s.Replace(",", string.Empty);
+            s = Conversion.RootDefaultHandling(s);
             for (int i = 0; i < textBox1.Text.Length; i++)
             {
                 if (calculator.isOperatorchar(textBox1.Text[i]) && calculator.isOperatorchar(textBox1.Text[i + 1]))
@@ -178,6 +181,10 @@ namespace WindowsFormsApp2
 
             if (calculator.isOperatorchar(s[s.Length-1]))
             {
+                MessageBox.Show("input is invalid");
+            }
+
+            else if (calculator.isOperatorchar(s[0])) { 
                 MessageBox.Show("input is invalid");
             }
             else if (!invalidinput)
@@ -217,7 +224,8 @@ namespace WindowsFormsApp2
 
         private void weightToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Form2 form = new Form2();
+            form.ShowDialog();
         }
 
         private void temperatureToolStripMenuItem_Click(object sender, EventArgs e)
@@ -257,6 +265,12 @@ namespace WindowsFormsApp2
             textBox1.Text = "0";
             firstClick = true;
         }
+
+        private void lengthToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form4 form = new Form4();
+            form.ShowDialog();
+        }
     }
 
     class Node
@@ -284,6 +298,19 @@ namespace WindowsFormsApp2
             return (double.TryParse(substring, out temp));
         }
 
+        static string[] RootHandling(string[] unreverse)
+        {
+            for(int i = 0; i < unreverse.Length; i++)
+            {
+                if(unreverse[i] == "√")
+                {
+                    string temp = unreverse[i+1];
+                    unreverse[i+1] = unreverse[i-1];
+                    unreverse[i-1] = temp;
+                }
+            }
+            return unreverse;
+        }
         static string[] InfixToPrefix(string[] infixArray)
         {
             Stack<String> result = new Stack<string>();
@@ -345,7 +372,7 @@ namespace WindowsFormsApp2
         public static String[] intoTreeUtility(String s)
         {
             s = Minushandiling(s);
-            String[] temp = InfixToPrefix(emptyValueDeletor(mathTokenization(s)));
+            String[] temp = InfixToPrefix(RootHandling(emptyValueDeletor(mathTokenization(s))));
             Array.Reverse(temp, 0, temp.Length);
             foreach(var match in temp)
             {
@@ -370,8 +397,31 @@ namespace WindowsFormsApp2
             }
             return s;
         }
-        
-    
+        public static String RootDefaultHandling(string s)
+        {
+            if (s[0] == '√')
+            {
+                s = s.Insert(0, "2");
+            }
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (s[i] == '√' && calculator.isOperatorchar(s[i - 1]))
+                {
+                    s = s.Insert(i - 1, "2");
+                }
+            }
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (s[i] == '(' && s[i + 1] == '√')
+                {
+                    s = s.Insert(i + 1, "2");
+                }
+            }
+            return s;
+        }
+
+
     }
 
     public class calculator
@@ -416,7 +466,7 @@ namespace WindowsFormsApp2
                 return Math.Pow(leftEval, rightEval);
 
             if (root.data.Equals("√"))
-                return Math.Pow(leftEval,1/rightEval);
+                return Math.Pow(leftEval, (double)1/rightEval);
             
             return leftEval / rightEval;
         }
