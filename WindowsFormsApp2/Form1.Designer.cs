@@ -491,8 +491,6 @@
             this.History.Size = new System.Drawing.Size(385, 493);
             this.History.TabIndex = 28;
             this.History.SelectedIndexChanged += new System.EventHandler(this.History_SelectedIndexChanged);
-            this.History.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mouseDownEvent);
-            this.History.MouseMove += new System.Windows.Forms.MouseEventHandler(this.mouseMoveEvent);
             // 
             // menuStrip1
             // 
@@ -506,7 +504,7 @@
             this.minimizeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(458, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(308, 36);
             this.menuStrip1.TabIndex = 29;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -524,21 +522,21 @@
             // weightToolStripMenuItem
             // 
             this.weightToolStripMenuItem.Name = "weightToolStripMenuItem";
-            this.weightToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.weightToolStripMenuItem.Size = new System.Drawing.Size(213, 32);
             this.weightToolStripMenuItem.Text = "Weight";
             this.weightToolStripMenuItem.Click += new System.EventHandler(this.weightToolStripMenuItem_Click);
             // 
             // temperatureToolStripMenuItem
             // 
             this.temperatureToolStripMenuItem.Name = "temperatureToolStripMenuItem";
-            this.temperatureToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.temperatureToolStripMenuItem.Size = new System.Drawing.Size(213, 32);
             this.temperatureToolStripMenuItem.Text = "Temperature";
             this.temperatureToolStripMenuItem.Click += new System.EventHandler(this.temperatureToolStripMenuItem_Click);
             // 
             // lengthToolStripMenuItem
             // 
             this.lengthToolStripMenuItem.Name = "lengthToolStripMenuItem";
-            this.lengthToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.lengthToolStripMenuItem.Size = new System.Drawing.Size(213, 32);
             this.lengthToolStripMenuItem.Text = "Length";
             this.lengthToolStripMenuItem.Click += new System.EventHandler(this.lengthToolStripMenuItem_Click);
             // 
