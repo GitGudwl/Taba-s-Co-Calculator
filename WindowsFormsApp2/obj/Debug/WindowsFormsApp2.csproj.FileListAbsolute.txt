@@ -64,3 +64,7 @@ D:\Kuliah\Struktur Data dan Algoritma\Taba-s-Co-Calculator\WindowsFormsApp2\obj\
 D:\Kuliah\Struktur Data dan Algoritma\Taba-s-Co-Calculator\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.cache
 D:\Kuliah\Struktur Data dan Algoritma\Taba-s-Co-Calculator\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
 D:\Kuliah\Struktur Data dan Algoritma\Taba-s-Co-Calculator\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+D:\Kuliah\Struktur Data dan Algoritma\Taba-s-Co-Calculator\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.manifest
+D:\Kuliah\Struktur Data dan Algoritma\Taba-s-Co-Calculator\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.application
+D:\Kuliah\Struktur Data dan Algoritma\Taba-s-Co-Calculator\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe.manifest
+D:\Kuliah\Struktur Data dan Algoritma\Taba-s-Co-Calculator\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.application

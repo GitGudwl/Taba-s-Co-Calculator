@@ -171,6 +171,7 @@ namespace WindowsFormsApp2
             string s = textBox1.Text;
             s = s.Replace(",", string.Empty);
             s = Conversion.RootDefaultHandling(s);
+            s = Conversion.Minushandiling(s);
             for (int i = 0; i < textBox1.Text.Length; i++)
             {
                 if (calculator.isOperatorchar(textBox1.Text[i]) && calculator.isOperatorchar(textBox1.Text[i + 1]))
@@ -371,7 +372,6 @@ namespace WindowsFormsApp2
 
         public static String[] intoTreeUtility(String s)
         {
-            s = Minushandiling(s);
             String[] temp = InfixToPrefix(RootHandling(emptyValueDeletor(mathTokenization(s))));
             Array.Reverse(temp, 0, temp.Length);
             foreach(var match in temp)
@@ -381,7 +381,7 @@ namespace WindowsFormsApp2
             return temp;
         }
 
-        static String Minushandiling(string s)
+        public static String Minushandiling(string s)
         {
             if (s[0] == '-')
             {
