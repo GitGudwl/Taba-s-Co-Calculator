@@ -174,7 +174,7 @@ namespace WindowsFormsApp2
             s = s.Replace(",", string.Empty);
             s = Conversion.RootDefaultHandling(s);
             s = Conversion.Minushandiling(s);
-            for (int i = 0; i < textBox1.Text.Length; i++)
+            for (int i = 0; i < textBox1.Text.Length-1; i++)
             {
                 if (calculator.isOperatorchar(textBox1.Text[i]) && calculator.isOperatorchar(textBox1.Text[i + 1]))
                 {
@@ -301,18 +301,18 @@ namespace WindowsFormsApp2
             return (double.TryParse(substring, out temp));
         }
 
-        static string[] RootHandling(string[] unreverse)
+        static string[] RootHandling(string[] unhandled)
         {
-            for(int i = 0; i < unreverse.Length; i++)
+            for(int i = 0; i < unhandled.Length; i++)
             {
-                if(unreverse[i] == "√")
+                if(unhandled[i] == "√")
                 {
-                    string temp = unreverse[i+1];
-                    unreverse[i+1] = unreverse[i-1];
-                    unreverse[i-1] = temp;
+                    string temp = unhandled[i+1];
+                    unhandled[i+1] = unhandled[i-1];
+                    unhandled[i-1] = temp;
                 }
             }
-            return unreverse;
+            return unhandled;
         }
         static string[] InfixToPrefix(string[] infixArray)
         {
@@ -376,10 +376,6 @@ namespace WindowsFormsApp2
         {
             String[] temp = InfixToPrefix(RootHandling(emptyValueDeletor(mathTokenization(s))));
             Array.Reverse(temp, 0, temp.Length);
-            foreach(var match in temp)
-            {
-                Console.WriteLine(match);
-            }
             return temp;
         }
 
@@ -406,13 +402,7 @@ namespace WindowsFormsApp2
                 s = s.Insert(0, "2");
             }
 
-            for (int i = 0; i < s.Length; i++)
-            {
-                if (s[i] == '√' && calculator.isOperatorchar(s[i - 1]))
-                {
-                    s = s.Insert(i - 1, "2");
-                }
-            }
+            
             for (int i = 0; i < s.Length; i++)
             {
                 if (s[i] == '(' && s[i + 1] == '√')
@@ -436,6 +426,7 @@ namespace WindowsFormsApp2
                 return 0;
 
             // Leaf node i.e, a double
+
             if (root.left == null && root.right == null) {
                 if (double.Parse(root.data) % 1 == 0)
                 {
